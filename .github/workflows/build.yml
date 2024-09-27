@@ -178,7 +178,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/*.AppImage
+          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}.AppImage
           asset_name: NoteDown.AppImage
           asset_content_type: application/octet-stream
 
@@ -188,7 +188,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/*.deb
+          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}.deb
           asset_name: NoteDown.deb
           asset_content_type: application/octet-stream
 
@@ -198,7 +198,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/*.snap
+          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}.snap
           asset_name: NoteDown.snap
           asset_content_type: application/octet-stream
 
@@ -209,7 +209,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/macos/*.dmg
+          asset_path: dist/macos/notedown-${{ steps.package_version.outputs.version }}.dmg
           asset_name: NoteDown.dmg
           asset_content_type: application/octet-stream
 
