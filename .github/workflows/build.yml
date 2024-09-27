@@ -178,8 +178,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/*
-          asset_name: NoteDown
+          asset_path: dist/linux/*.AppImage
+          asset_name: NoteDown.AppImage
+          asset_content_type: application/octet-stream
+
+      - name: Upload Linux binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/linux/*.deb
+          asset_name: NoteDown.deb
+          asset_content_type: application/octet-stream
+
+      - name: Upload Linux binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/linux/*.snap
+          asset_name: NoteDown.snap
           asset_content_type: application/octet-stream
 
       - name: Upload macOS binary
