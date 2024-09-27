@@ -25,8 +25,8 @@ jobs:
         os:
           - type: ubuntu-latest
             build: linux
-          - type: ubuntu-latest
-            build: windows
+          #- type: ubuntu-latest
+          #  build: windows
           - type: macos-latest
             build: macos
 
