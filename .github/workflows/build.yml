@@ -84,7 +84,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux-binary
-          path: dist/*.{AppImage,snap,deb}
+          path: |
+            dist/*.AppImage
+            dist/*.snap
+            dist/*.deb
 
       - name: Upload Mac binary
         if: matrix.os.build == 'macos'
@@ -136,7 +139,7 @@ jobs:
       - name: Download Linux binary
         uses: actions/download-artifact@v4
         with:
-          name: ubuntu-binary
+          name: linux-binary
           path: dist/linux
 
       - name: Download macOS binary
