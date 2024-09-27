@@ -20,12 +20,13 @@ permissions:
 jobs:
   build:
     runs-on: ${{ matrix.os.type }}
+    container: archlinux
     strategy:
       matrix:
         os:
           - type: ubuntu-latest
             build: linux
-          - type: windows-latest
+          - type: windows-2019
             build: windows
           - type: macos-latest
             build: macos
