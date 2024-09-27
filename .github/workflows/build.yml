@@ -19,14 +19,16 @@ permissions:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os.type }}
     strategy:
       matrix:
-        os: [
-          ubuntu-latest,
-          macos-latest,
-          windows-latest
-        ]
+        os:
+          - type: ubuntu-latest
+            build: linux
+          - type: ubuntu-latest
+            build: windows
+          - type: macos-latest
+            build: macos
 
     steps:
       - name: Checkout code
@@ -59,33 +61,33 @@ jobs:
         run: pnpm install
 
       - name: Build Windows
-        if: matrix.os == 'windows-latest'
+        if: matrix.os.build == 'windows'
         run: pnpm build:win
 
-      - name: Build Linux
-        if: matrix.os == 'macos-latest'
+      - name: Build Mac
+        if: matrix.os.build == 'macos'
         run: pnpm build:mac
 
-      - name: Build Windows
-        if: matrix.os == 'ubuntu-latest'
+      - name: Build Linux
+        if: matrix.os.build == 'linux'
         run: pnpm build:linux
 
       - name: Upload Windows binary
-        if: matrix.os == 'windows-latest'
+        if: matrix.os.build == 'windows'
         uses: actions/upload-artifact@v4
         with:
           name: windows-binary
           path: dist/*.exe
 
       - name: Upload Linux binary
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os.build == 'linux'
         uses: actions/upload-artifact@v4
         with:
           name: linux-binary
           path: dist/*.{AppImage,snap,deb}
 
       - name: Upload Mac binary
-        if: matrix.os == 'macos-latest'
+        if: matrix.os.build == 'macos'
         uses: actions/upload-artifact@v4
         with:
           name: macos-binary
