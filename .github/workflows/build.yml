@@ -178,8 +178,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: target/release/linux/rs-scp
-          asset_name: rs-scp-linux
+          asset_path: dist/linux/*
+          asset_name: NoteDown
           asset_content_type: application/octet-stream
 
       - name: Upload macOS binary
@@ -189,8 +189,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: target/release/macos/rs-scp
-          asset_name: rs-scp-macos
+          asset_path: dist/macos/*.dmg
+          asset_name: NoteDown.dmg
           asset_content_type: application/octet-stream
 
 #      - name: Upload Windows binary
