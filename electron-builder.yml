@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: dev.notedown.app
 productName: notedown
 directories:
   buildResources: build
