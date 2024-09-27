@@ -171,54 +171,7 @@ jobs:
           name: Release v${{ steps.package_version.outputs.version }}
           draft: false
           prerelease: false
-
-      - name: Upload Linux binary
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}.AppImage
-          asset_name: NoteDown.AppImage
-          asset_content_type: application/octet-stream
-
-      - name: Upload Linux binary
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}_amd64.deb
-          asset_name: NoteDown.deb
-          asset_content_type: application/octet-stream
-
-      - name: Upload Linux binary
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/linux/notedown-${{ steps.package_version.outputs.version }}_amd64.snap
-          asset_name: NoteDown.snap
-          asset_content_type: application/octet-stream
-
-      - name: Upload macOS binary
-        uses: actions/upload-release-asset@v1
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/macos/notedown-${{ steps.package_version.outputs.version }}.dmg
-          asset_name: NoteDown.dmg
-          asset_content_type: application/octet-stream
-
-#      - name: Upload Windows binary
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: target/release/windows/rs-scp.exe
-#          asset_name: rs-scp-windows.exe
-#          asset_content_type: application/octet-stream
+          files: |
+            dist/linux/*
+            dist/macos/*
+#            dist/windows/*
