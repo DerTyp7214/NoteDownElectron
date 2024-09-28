@@ -13,8 +13,8 @@ function createWindow(): void {
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   })
 
   mainWindow.on('ready-to-show', () => {
@@ -22,6 +22,15 @@ function createWindow(): void {
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
+    if (details.url.startsWith('https://notedown') && details.url.includes('firebaseapp.com')) {
+      return {
+        action: 'allow',
+        outlivesOpener: true,
+        overrideBrowserWindowOptions: {
+          frame: false
+        }
+      }
+    }
     shell.openExternal(details.url)
     return { action: 'deny' }
   })
@@ -31,7 +40,8 @@ function createWindow(): void {
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+    mainWindow.loadURL('https://notedown.dev')
+    //mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 }
 
