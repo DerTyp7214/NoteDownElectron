@@ -1,6 +1,6 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
-import { join } from 'path'
-import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import {app, BrowserWindow, ipcMain, shell} from 'electron'
+import {join} from 'path'
+import {electronApp, is, optimizer} from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
@@ -10,7 +10,7 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon } : {}),
+    ...(process.platform === 'linux' ? {icon} : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false,
@@ -32,7 +32,15 @@ function createWindow(): void {
       }
     }
     shell.openExternal(details.url)
-    return { action: 'deny' }
+    return {action: 'deny'}
+  })
+
+  mainWindow.webContents.on('will-navigate', (event) => {
+    const url = new URL(event.url)
+    if (url.host !== 'notedown') {
+      event.preventDefault()
+      shell.openExternal(event.url)
+    }
   })
 
   // HMR for renderer base on electron-vite cli.
