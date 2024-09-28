@@ -2,10 +2,6 @@ name: Build and Release
 
 on:
   push:
-    paths:
-      - '**.rs'
-      - '**.toml'
-      - '**.yml'
     branches:
       - master
   workflow_dispatch:
