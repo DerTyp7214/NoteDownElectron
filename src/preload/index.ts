@@ -1,5 +1,8 @@
 import { contextBridge } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
+import pkg from 'custom-electron-titlebar'
+
+const { Titlebar, TitlebarColor } = pkg
 
 // Custom APIs for renderer
 const api = {}
@@ -20,3 +23,11 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.api = api
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Title bar implementation
+  new Titlebar({
+    backgroundColor: TitlebarColor.TRANSPARENT
+  } as any)
+})

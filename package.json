@@ -1,6 +1,6 @@
 {
   "name": "notedown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Electron application with Svelte and TypeScript",
   "main": "./out/main/index.js",
   "author": "notedown.dev",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
+    "custom-electron-titlebar": "^4.2.8",
     "electron-updater": "^6.1.7"
   },
   "devDependencies": {

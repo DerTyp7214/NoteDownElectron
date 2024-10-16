@@ -1,7 +1,11 @@
-import { app, BrowserWindow, ipcMain, shell } from 'electron'
-import { join } from 'path'
-import { electronApp, optimizer } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import { app, BrowserWindow, ipcMain, nativeImage, shell } from 'electron'
+import path, { join } from 'path'
+import { electronApp, is, optimizer } from '@electron-toolkit/utils'
+import { attachTitlebarToWindow, setupTitlebar } from 'custom-electron-titlebar/main'
+
+setupTitlebar()
+
+const appIcon = nativeImage.createFromPath(path.join('..', '..', 'resources', 'icon.png'))
 
 function createWindow(): void {
   // Create the browser window.
@@ -10,7 +14,10 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon } : {}),
+    titleBarStyle: 'hidden',
+    titleBarOverlay: true,
+    icon: appIcon,
+    title: 'Notedown',
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false
@@ -44,6 +51,12 @@ function createWindow(): void {
   })
 
   mainWindow.loadURL('https://notedown.dev')
+
+  if (is.dev) {
+    mainWindow.webContents.openDevTools()
+  }
+
+  attachTitlebarToWindow(mainWindow)
 }
 
 // This method will be called when Electron has finished
