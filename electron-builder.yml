@@ -1,5 +1,5 @@
 appId: dev.notedown.app
-productName: notedown
+productName: NoteDown
 directories:
   buildResources: build
 files:
@@ -21,6 +21,7 @@ nsis:
   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist
+  darkModeSupport: true
   notarize: false
 dmg:
   artifactName: ${name}-${version}.${ext}
