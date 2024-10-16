@@ -1,6 +1,6 @@
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 // @ts-ignore
-import notedownViteConfig from './src/renderer/vite.config'
 /*import { existsSync } from 'fs'
 
 let notedownViteConfig = {}
@@ -17,6 +17,6 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {
-    ...notedownViteConfig as any
+    plugins: [svelte()]
   }
 })
