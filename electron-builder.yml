@@ -24,6 +24,9 @@ mac:
   notarize: false
 dmg:
   artifactName: ${name}-${version}.${ext}
+  backgrundColor: '#614965'
+  title: NoteDown
+  icon: dmgIcon.icns
 linux:
   target:
     - AppImage

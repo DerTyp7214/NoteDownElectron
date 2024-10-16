@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/build/icon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron-builder.yml" beforeDir="false" afterPath="$PROJECT_DIR$/electron-builder.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +141,7 @@
       <workItem from="1727550583216" duration="14000" />
       <workItem from="1729079801538" duration="107000" />
       <workItem from="1729079911152" duration="548000" />
-      <workItem from="1729081181529" duration="3135000" />
+      <workItem from="1729081181529" duration="5678000" />
     </task>
     <servers />
   </component>
