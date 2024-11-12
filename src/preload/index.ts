@@ -24,10 +24,10 @@ if (process.contextIsolated) {
   window.api = api
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
   // Title bar implementation
   new Titlebar({
-    backgroundColor: TitlebarColor.TRANSPARENT
-  } as any)
+    backgroundColor: TitlebarColor.TRANSPARENT,
+    menuBarBackgroundColor: TitlebarColor.TRANSPARENT
+  })
 })

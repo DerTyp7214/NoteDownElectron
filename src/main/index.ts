@@ -1,4 +1,4 @@
-import { app, BrowserWindow, nativeImage, shell, Menu, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, nativeImage, shell } from 'electron'
 import path, { join } from 'path'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { attachTitlebarToWindow, setupTitlebar } from 'custom-electron-titlebar/main'
@@ -16,7 +16,7 @@ function createWindow(): BrowserWindow {
     show: false,
     autoHideMenuBar: true,
     titleBarStyle: 'hidden',
-    titleBarOverlay: true,
+    titleBarOverlay: false,
     icon: appIcon,
     title: 'NoteDown',
     webPreferences: {
@@ -56,8 +56,6 @@ function createWindow(): BrowserWindow {
   if (is.dev) {
     mainWindow.webContents.openDevTools()
   }
-
-  attachTitlebarToWindow(mainWindow)
 
   return mainWindow
 }
@@ -143,9 +141,17 @@ app.whenReady().then(() => {
       },
       {
         role: 'windowMenu'
+      },
+      {
+        label: null as never
+      },
+      {
+        label: null as never
       }
     ])
   )
+
+  attachTitlebarToWindow(mainWindow)
 
   ipcMain.on('appVersion', (event) => (event.returnValue = app.getVersion()))
 
