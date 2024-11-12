@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, nativeImage, shell } from 'electron'
+import { app, BrowserWindow, nativeImage, shell, Menu, ipcMain } from 'electron'
 import path, { join } from 'path'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { attachTitlebarToWindow, setupTitlebar } from 'custom-electron-titlebar/main'
@@ -6,8 +6,9 @@ import { attachTitlebarToWindow, setupTitlebar } from 'custom-electron-titlebar/
 setupTitlebar()
 
 const appIcon = nativeImage.createFromPath(path.join('..', '..', 'resources', 'icon.png'))
+app.setName('NoteDown')
 
-function createWindow(): void {
+function createWindow(): BrowserWindow {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 900,
@@ -17,7 +18,7 @@ function createWindow(): void {
     titleBarStyle: 'hidden',
     titleBarOverlay: true,
     icon: appIcon,
-    title: 'Notedown',
+    title: 'NoteDown',
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false
@@ -57,6 +58,8 @@ function createWindow(): void {
   }
 
   attachTitlebarToWindow(mainWindow)
+
+  return mainWindow
 }
 
 // This method will be called when Electron has finished
@@ -73,12 +76,80 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  // IPC test
-  ipcMain.on('ping', () => console.log('pong'))
+  const mainWindow = createWindow()
 
-  createWindow()
+  const dockMenu = Menu.buildFromTemplate([
+    {
+      label: 'New Note',
+      accelerator: 'CmdOrCtrl+N',
+      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+      click() {
+        mainWindow.webContents.send('new-note')
+      }
+    }
+  ])
 
-  app.on('activate', function() {
+  if (process.platform === 'darwin') {
+    app.dock.setMenu(dockMenu)
+  }
+
+  Menu.setApplicationMenu(
+    Menu.buildFromTemplate([
+      {
+        label: 'NoteDown',
+        submenu: Menu.buildFromTemplate([
+          {
+            label: `About ${app.name}`,
+            // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+            click() {
+              mainWindow.webContents.send('about')
+            }
+          },
+          {
+            label: 'Versions',
+            // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+            click() {
+              mainWindow.webContents.send('versions')
+            }
+          },
+          {
+            type: 'separator'
+          },
+          {
+            label: 'Save Note',
+            accelerator: 'CmdOrCtrl+S',
+            // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+            click() {
+              mainWindow.webContents.send('save-note')
+            }
+          },
+          ...dockMenu.items,
+          {
+            type: 'separator'
+          },
+          {
+            role: 'reload'
+          },
+          {
+            role: 'forceReload'
+          },
+          {
+            type: 'separator'
+          },
+          {
+            role: 'quit'
+          }
+        ])
+      },
+      {
+        role: 'windowMenu'
+      }
+    ])
+  )
+
+  ipcMain.on('appVersion', (event) => (event.returnValue = app.getVersion()))
+
+  app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
