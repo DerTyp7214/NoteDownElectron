@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="update">
+    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="dark mac icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/homebrew/bin/pnpm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/typ/IdeaProjects/NoteDownElectron/build&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,11 +63,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:mac">
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="NoteDown" />
       <method v="2">
@@ -180,7 +184,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -203,7 +207,18 @@
       <workItem from="1731422806847" duration="10145000" />
       <workItem from="1731435915441" duration="3659000" />
       <workItem from="1731439586589" duration="280000" />
+      <workItem from="1731590054444" duration="415000" />
+      <workItem from="1732044661038" duration="519000" />
     </task>
+    <task id="LOCAL-00001" summary="dark mac icon">
+      <option name="closed" value="true" />
+      <created>1731590324112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731590324112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,5 +250,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/renderer" />
     </ignored-roots>
+    <MESSAGE value="dark mac icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="dark mac icon" />
   </component>
 </project>

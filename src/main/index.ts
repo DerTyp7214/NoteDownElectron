@@ -123,6 +123,22 @@ app.whenReady().then(() => {
           },
           ...dockMenu.items,
           {
+            label: 'Discard Note',
+            accelerator: 'CmdOrCtrl+D',
+            // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+            click() {
+              mainWindow.webContents.send('discard-note')
+            }
+          },
+          {
+            label: 'Toggle Preview',
+            accelerator: 'CmdOrCtrl+P',
+            // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+            click() {
+              mainWindow.webContents.send('toggle-preview')
+            }
+          },
+          {
             type: 'separator'
           },
           {
