@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="dark mac icon">
+    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="more menu actions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/arch" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PackageJsonUpdateNotifier">
@@ -70,7 +69,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build:mac">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="NoteDown" />
       <method v="2">
@@ -208,7 +207,8 @@
       <workItem from="1731435915441" duration="3659000" />
       <workItem from="1731439586589" duration="280000" />
       <workItem from="1731590054444" duration="415000" />
-      <workItem from="1732044661038" duration="519000" />
+      <workItem from="1732044661038" duration="1081000" />
+      <workItem from="1732265184859" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="dark mac icon">
       <option name="closed" value="true" />
@@ -218,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731590324112</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="more menu actions">
+      <option name="closed" value="true" />
+      <created>1732045541392</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732045541392</updated>
+    </task>
+    <task id="LOCAL-00003" summary="more menu actions">
+      <option name="closed" value="true" />
+      <created>1732045550182</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732045550182</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +267,7 @@
       <path value="$PROJECT_DIR$/src/renderer" />
     </ignored-roots>
     <MESSAGE value="dark mac icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="dark mac icon" />
+    <MESSAGE value="more menu actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="more menu actions" />
   </component>
 </project>

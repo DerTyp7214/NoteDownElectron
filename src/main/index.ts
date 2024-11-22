@@ -8,11 +8,11 @@ setupTitlebar()
 const appIcon = nativeImage.createFromPath(path.join('..', '..', 'resources', 'icon.png'))
 app.setName('NoteDown')
 
-function createWindow(): BrowserWindow {
+async function createWindow(): Promise<BrowserWindow> {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1025,
+    height: 720,
     show: false,
     autoHideMenuBar: true,
     titleBarStyle: 'hidden',
@@ -43,15 +43,15 @@ function createWindow(): BrowserWindow {
     return { action: 'deny' }
   })
 
-  mainWindow.webContents.on('will-navigate', (event) => {
+  mainWindow.webContents.on('will-navigate', async (event) => {
     const url = new URL(event.url)
     if (url.host !== 'notedown') {
       event.preventDefault()
-      shell.openExternal(event.url)
+      await shell.openExternal(event.url)
     }
   })
 
-  mainWindow.loadURL('https://notedown.dev')
+  await mainWindow.loadURL('https://notedown.dev')
 
   if (is.dev) {
     mainWindow.webContents.openDevTools()
@@ -63,7 +63,7 @@ function createWindow(): BrowserWindow {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
   // Set app user model id for windows
   electronApp.setAppUserModelId('dev.notedown')
 
@@ -74,7 +74,7 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  const mainWindow = createWindow()
+  const mainWindow = await createWindow()
 
   const dockMenu = Menu.buildFromTemplate([
     {
