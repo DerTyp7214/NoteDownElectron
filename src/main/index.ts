@@ -19,6 +19,9 @@ async function createWindow(): Promise<BrowserWindow> {
     titleBarOverlay: false,
     icon: appIcon,
     title: 'NoteDown',
+    transparent: true,
+    vibrancy: 'fullscreen-ui', // on MacOS
+    backgroundMaterial: 'acrylic', // on Windows 11
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false
@@ -54,6 +57,7 @@ async function createWindow(): Promise<BrowserWindow> {
   await mainWindow.loadURL('https://notedown.dev')
 
   if (is.dev) {
+    await mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   }
 
