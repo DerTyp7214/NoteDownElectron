@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="change startup size">
+    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="transparent window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +215,11 @@
       <workItem from="1732265587499" duration="276000" />
       <workItem from="1732267084384" duration="454000" />
       <workItem from="1734339412622" duration="3376000" />
-      <workItem from="1734345764256" duration="1927000" />
+      <workItem from="1734345764256" duration="3336000" />
+      <workItem from="1734349621888" duration="15000" />
+      <workItem from="1734349641693" duration="602000" />
+      <workItem from="1734350616351" duration="155000" />
+      <workItem from="1734560228172" duration="5855000" />
     </task>
     <task id="LOCAL-00001" summary="dark mac icon">
       <option name="closed" value="true" />
@@ -248,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732265835426</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="transparent window">
+      <option name="closed" value="true" />
+      <created>1734347880365</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734347880365</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +296,7 @@
     <MESSAGE value="dark mac icon" />
     <MESSAGE value="more menu actions" />
     <MESSAGE value="change startup size" />
-    <option name="LAST_COMMIT_MESSAGE" value="change startup size" />
+    <MESSAGE value="transparent window" />
+    <option name="LAST_COMMIT_MESSAGE" value="transparent window" />
   </component>
 </project>

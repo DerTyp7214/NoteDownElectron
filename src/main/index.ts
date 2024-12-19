@@ -2,6 +2,11 @@ import { app, BrowserWindow, ipcMain, Menu, nativeImage, shell } from 'electron'
 import path, { join } from 'path'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { attachTitlebarToWindow, setupTitlebar } from 'custom-electron-titlebar/main'
+import { electronAppUniversalProtocolClient } from 'electron-app-universal-protocol-client'
+
+if (!app.requestSingleInstanceLock()) {
+  app.exit(0)
+}
 
 setupTitlebar()
 
@@ -33,10 +38,14 @@ async function createWindow(): Promise<BrowserWindow> {
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
-    if (details.url.startsWith('https://notedown') && details.url.includes('firebaseapp.com')) {
+    if (
+      (details.url.startsWith('https://notedown') && details.url.includes('firebaseapp.com')) ||
+      details.url.startsWith('https://notedown.dev/privacy') ||
+      details.url.startsWith('https://notedown.dev/deletion')
+    ) {
       return {
         action: 'allow',
-        outlivesOpener: true,
+        outlivesOpener: false,
         overrideBrowserWindowOptions: {
           frame: false
         }
@@ -179,6 +188,19 @@ app.whenReady().then(async () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+
+  electronAppUniversalProtocolClient.on('request', async (requestUrl) => {
+    const url = new URL(requestUrl)
+    if (url.protocol === 'notedown:' && url.host) {
+      if (!mainWindow.isVisible()) mainWindow.restore()
+      mainWindow.webContents.send('open-note', url.host)
+    }
+  })
+
+  await electronAppUniversalProtocolClient.initialize({
+    protocol: 'notedown',
+    mode: is.dev ? 'development' : 'production' // Make sure to use 'production' when script is executed in bundled app
   })
 })
 
