@@ -63,12 +63,27 @@ async function createWindow(): Promise<BrowserWindow> {
     }
   })
 
+  mainWindow.on('enter-full-screen', () => {
+    mainWindow.webContents.send('maximized', 'true')
+  })
+
+  mainWindow.on('leave-full-screen', () => {
+    mainWindow.webContents.send('maximized', 'false')
+
+    setTimeout(() => {
+      const size = mainWindow.getSize()
+      mainWindow.setSize(size[0], size[1] + 1, true) // TODO: scuffed
+    }, 100)
+  })
+
   await mainWindow.loadURL('https://notedown.dev')
 
   if (is.dev) {
     await mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   }
+
+  mainWindow.isFullScreen()
 
   return mainWindow
 }

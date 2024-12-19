@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="url handler, deeplink">
-      <change beforePath="$PROJECT_DIR$/arch" beforeDir="false" afterPath="$PROJECT_DIR$/arch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arch/PKGBUILD" beforeDir="false" afterPath="$PROJECT_DIR$/arch/PKGBUILD" afterDir="false" />
+    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="bump version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +17,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/arch" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PackageJsonUpdateNotifier">
@@ -175,10 +175,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.dev" />
-      <item itemvalue="npm.build:win" />
-      <item itemvalue="npm.build:mac" />
       <item itemvalue="npm.build:linux" />
+      <item itemvalue="npm.build:mac" />
+      <item itemvalue="npm.build:win" />
+      <item itemvalue="npm.dev" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -217,7 +217,9 @@
       <workItem from="1734349621888" duration="15000" />
       <workItem from="1734349641693" duration="602000" />
       <workItem from="1734350616351" duration="155000" />
-      <workItem from="1734560228172" duration="5895000" />
+      <workItem from="1734560228172" duration="6639000" />
+      <workItem from="1734569429822" duration="1000" />
+      <workItem from="1734570479769" duration="2937000" />
     </task>
     <task id="LOCAL-00001" summary="dark mac icon">
       <option name="closed" value="true" />
@@ -267,7 +269,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734568148566</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="bump version">
+      <option name="closed" value="true" />
+      <created>1734568195955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734568195955</updated>
+    </task>
+    <task id="LOCAL-00008" summary="bump version">
+      <option name="closed" value="true" />
+      <created>1734568200890</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734568200890</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +322,7 @@
     <MESSAGE value="change startup size" />
     <MESSAGE value="transparent window" />
     <MESSAGE value="url handler, deeplink" />
-    <option name="LAST_COMMIT_MESSAGE" value="url handler, deeplink" />
+    <MESSAGE value="bump version" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump version" />
   </component>
 </project>
