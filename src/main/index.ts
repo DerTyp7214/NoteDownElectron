@@ -47,7 +47,18 @@ async function createWindow(): Promise<BrowserWindow> {
         action: 'allow',
         outlivesOpener: false,
         overrideBrowserWindowOptions: {
-          frame: false
+          frame: !details.url.includes('firebaseapp.com'),
+          autoHideMenuBar: true,
+          titleBarStyle: 'hidden',
+          titleBarOverlay: false,
+          icon: appIcon,
+          transparent: true,
+          vibrancy: 'fullscreen-ui', // on MacOS
+          backgroundMaterial: 'acrylic', // on Windows 11
+          webPreferences: {
+            preload: join(__dirname, '../preload/index.mjs'),
+            sandbox: false
+          }
         }
       }
     }

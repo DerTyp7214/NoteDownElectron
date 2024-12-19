@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="bump version">
+    <list default="true" id="a6bb18f7-7631-4993-b8d6-ace0b34a86f4" name="Changes" comment="bump version, small style changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch" beforeDir="false" afterPath="$PROJECT_DIR$/arch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/PKGBUILD" beforeDir="false" afterPath="$PROJECT_DIR$/arch/PKGBUILD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +187,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -219,7 +222,11 @@
       <workItem from="1734350616351" duration="155000" />
       <workItem from="1734560228172" duration="6639000" />
       <workItem from="1734569429822" duration="1000" />
-      <workItem from="1734570479769" duration="2937000" />
+      <workItem from="1734570479769" duration="3194000" />
+      <workItem from="1734609913356" duration="101000" />
+      <workItem from="1734610231263" duration="4000" />
+      <workItem from="1734610390743" duration="153000" />
+      <workItem from="1734610550048" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary="dark mac icon">
       <option name="closed" value="true" />
@@ -285,7 +292,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734568200890</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="bump version">
+      <option name="closed" value="true" />
+      <created>1734574731576</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734574731576</updated>
+    </task>
+    <task id="LOCAL-00010" summary="bump version, small style changes">
+      <option name="closed" value="true" />
+      <created>1734574747701</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734574747701</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +346,7 @@
     <MESSAGE value="transparent window" />
     <MESSAGE value="url handler, deeplink" />
     <MESSAGE value="bump version" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump version" />
+    <MESSAGE value="bump version, small style changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump version, small style changes" />
   </component>
 </project>
